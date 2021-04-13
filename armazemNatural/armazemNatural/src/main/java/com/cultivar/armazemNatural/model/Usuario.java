@@ -23,7 +23,7 @@ public class Usuario {
 	private String email;
 	
 	@NotNull
-	@Size(min = 8, max = 20)
+	@Size(min = 8, max = 100)
 	private String senha;
 
 	public long getId() {
