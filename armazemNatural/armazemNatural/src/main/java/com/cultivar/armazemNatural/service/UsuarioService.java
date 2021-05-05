@@ -19,6 +19,7 @@ public class UsuarioService {
 	private UsuarioRepository repository;
 	
 	public Usuario CadastrarUsuario(Usuario usuario) {
+		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
 		String senhaEncoder = encoder.encode(usuario.getSenha());
@@ -39,7 +40,10 @@ public class UsuarioService {
 				String authHeader = "Basic " + new String(encodedAuth);
 				
 				user.get().setToken(authHeader);
-				user.get().setEmail(usuario.get().getNome());
+				user.get().setEmail(usuario.get().getEmail());
+				user.get().setSenha(usuario.get().getSenha());
+				user.get().setFoto(usuario.get().getFoto());
+				user.get().setTipo(usuario.get().getTipo());
 				
 				return user;
 			}

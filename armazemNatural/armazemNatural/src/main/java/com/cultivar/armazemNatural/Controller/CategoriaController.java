@@ -20,7 +20,7 @@ import com.cultivar.armazemNatural.repository.CategoriaRepository;
 
 @RestController
 @RequestMapping("/categoria")
-@CrossOrigin
+@CrossOrigin("*")
 public class CategoriaController {
 
 	@Autowired

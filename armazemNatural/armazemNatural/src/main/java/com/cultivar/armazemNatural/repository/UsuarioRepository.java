@@ -8,5 +8,5 @@ import com.cultivar.armazemNatural.model.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 
-	public Optional<Usuario> findByEmail (String usuario);
+	public Optional<Usuario> findByEmail (String email);
 }

@@ -22,6 +22,11 @@ public class Usuario {
 	@NotNull
 	private String email;
 	
+	private String foto;
+	
+	@NotNull
+	private String tipo;
+	
 	@NotNull
 	@Size(min = 8, max = 100)
 	private String senha;
@@ -56,6 +61,22 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 }
