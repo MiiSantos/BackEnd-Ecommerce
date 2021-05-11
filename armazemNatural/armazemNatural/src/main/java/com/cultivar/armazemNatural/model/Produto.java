@@ -29,28 +29,9 @@ public class Produto {
 	@NotNull
 	private String descricao;
 	
-	@NotNull
-	@Digits(integer = 10, fraction = 2)
 	private BigDecimal preco;
 	
-	@NotNull
-	private String marca;
-	
-	@NotNull
-	private String fornecedor;
-	
-	@NotNull
-	private long qtdEstoque;
-	
-	@NotNull
-	@URL
 	private String imagem;
-	
-	@NotNull
-	private long peso;
-	
-	@NotNull
-	boolean ativo;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
@@ -88,52 +69,12 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public String getMarca() {
-		return marca;
-	}
-
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-
-	public String getFornecedor() {
-		return fornecedor;
-	}
-
-	public void setFornecedor(String fornecedor) {
-		this.fornecedor = fornecedor;
-	}
-
-	public long getQtdEstoque() {
-		return qtdEstoque;
-	}
-
-	public void setQtdEstoque(long qtdEstoque) {
-		this.qtdEstoque = qtdEstoque;
-	}
-
 	public String getImagem() {
 		return imagem;
 	}
 
 	public void setImagem(String imagem) {
 		this.imagem = imagem;
-	}
-
-	public long getPeso() {
-		return peso;
-	}
-
-	public void setPeso(long peso) {
-		this.peso = peso;
-	}
-
-	public boolean isAtivo() {
-		return ativo;
-	}
-
-	public void setAtivo(boolean ativo) {
-		this.ativo = ativo;
 	}
 
 	public Categoria getCategoria() {

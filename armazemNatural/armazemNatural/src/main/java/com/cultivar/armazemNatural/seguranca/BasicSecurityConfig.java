@@ -1,4 +1,5 @@
 package com.cultivar.armazemNatural.seguranca;
+import org.springframework.http.HttpMethod;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -32,6 +33,12 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 		.antMatchers("/usuario/logar").permitAll()
 		.antMatchers("/usuario/cadastrar").permitAll()
+		.antMatchers(HttpMethod.GET ,"/produto").permitAll()
+		.antMatchers(HttpMethod.GET ,"/categoria").permitAll()
+		.antMatchers(HttpMethod.POST,"/produto").permitAll()
+		.antMatchers(HttpMethod.POST, "/categoria").permitAll()
+		.antMatchers(HttpMethod.GET, "/categoria/{id}").permitAll()
+		.antMatchers(HttpMethod.POST,"/produto/{id}").permitAll()
 		.anyRequest().authenticated()
 		.and().httpBasic()
 		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

@@ -28,11 +28,6 @@ public class Categoria {
 	@Size(min = 2, max = 255)
 	private String nome;
 	
-	@NotNull
-	@URL
-	@Size(min = 2, max = 255)
-	private String imagem;
-	
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("categoria")
 	private List<Produto> produto;
@@ -51,14 +46,6 @@ public class Categoria {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getImagem() {
-		return imagem;
-	}
-
-	public void setImagem(String imagem) {
-		this.imagem = imagem;
 	}
 
 	public List<Produto> getProduto() {

@@ -24,7 +24,6 @@ public class Usuario {
 	
 	private String foto;
 	
-	@NotNull
 	private String tipo;
 	
 	@NotNull
